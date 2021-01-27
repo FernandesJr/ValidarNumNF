@@ -2,11 +2,14 @@ package Controller;
 
 import DAO.Conexao;
 import DAO.ImportNota;
+import Model.ListHost;
 import Model.NotaFiscal;
 import java.awt.Color;
 //import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.sql.Connection;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -99,6 +102,33 @@ public class ControllerViewPri implements ActionListener{
             return true;
         }
         return false;
+    }
+    
+    public void validarUser(){
+        
+        Alerta alerta = new Alerta();
+        String hostName = "";
+        
+        try {
+            hostName = InetAddress.getLocalHost().getHostName();
+        } catch (UnknownHostException ex) {
+            alerta.msg("ERRO: Nome da máquina não encontrado.");
+            alerta.setVisible(true);
+        }
+        
+        ListHost list = new ListHost();
+        boolean valida = false;
+        for(String user : list.allList()){
+            if(user.equals(hostName)){
+                valida = true;
+            }
+        }
+        if(!valida){
+            this.view.dispose();
+            alerta.msg("Usuário não cadastrado!");
+            alerta.msg2("Por favor verifique");
+            alerta.setVisible(true);
+        }
     }
     
     public void hora(){

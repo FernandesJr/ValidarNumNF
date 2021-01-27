@@ -7,6 +7,7 @@ package view;
 
 import Controller.ControllerViewPri;
 import java.awt.Color;
+import java.awt.event.KeyEvent;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
@@ -55,7 +56,7 @@ public class ViewPri extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("FernandesDeveloper VsGS2");
+        setTitle("FernandesDeveloper VsGS2 Git");
         setExtendedState(6);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -191,10 +192,11 @@ public class ViewPri extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         this.controlador.hora();
+        this.controlador.validarUser();
     }//GEN-LAST:event_formWindowOpened
 
     private void numNotaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numNotaKeyPressed
-        if (evt.getKeyCode() == evt.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
             this.controlador.confirma();
         }
     }//GEN-LAST:event_numNotaKeyPressed
