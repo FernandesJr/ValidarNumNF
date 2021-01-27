@@ -15,13 +15,14 @@ public class ControllerAlerta implements ActionListener{
     }
     
     public void duracao(){
-        
-        Timer time = new Timer(7000, this);
+         
+        Timer time = new Timer(10000, this);
         time.start();
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
+        
         view.dispose();
     }
 }

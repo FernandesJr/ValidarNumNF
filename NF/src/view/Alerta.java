@@ -15,7 +15,6 @@ import javax.swing.JPanel;
  */
 public class Alerta extends javax.swing.JFrame {
 
-    private ControllerAlerta controlador;
     
     public Alerta() {
         initComponents();

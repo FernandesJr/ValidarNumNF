@@ -5,7 +5,7 @@ import DAO.ImportNota;
 import Model.ListHost;
 import Model.NotaFiscal;
 import java.awt.Color;
-//import java.awt.Toolkit;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.InetAddress;
@@ -31,7 +31,7 @@ public class ControllerViewPri implements ActionListener{
     
     public void setIcone(){
         // No file jar. não funciona o ico, o SO é quem altera.
-        //this.view.setIconImage(Toolkit.getDefaultToolkit().getImage("src/img/iconeNF.png"));
+        this.view.setIconImage(Toolkit.getDefaultToolkit().getImage("src/img/iconeNF.png"));
     }
     
     public void confirma(){
@@ -126,7 +126,7 @@ public class ControllerViewPri implements ActionListener{
         if(!valida){
             this.view.dispose();
             alerta.msg("Usuário não cadastrado!");
-            alerta.msg2("Por favor verifique");
+            alerta.msg2("Por favor, verifique.");
             alerta.setVisible(true);
         }
     }
